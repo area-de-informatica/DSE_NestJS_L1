@@ -7,8 +7,8 @@ import { Song } from './schemas/song.schema';
 export class SongService {
   constructor(@InjectModel('Song') private readonly songModel: Model<Song>) {}
 
-  async findOne(id: number): Promise<{}> {
-    const room = await this.songModel.find().exec();
+  async findOne(id: number): Promise<Song> {
+    const room = await this.songModel.findById({ _id: id }).exec();
     return room;
   }
 

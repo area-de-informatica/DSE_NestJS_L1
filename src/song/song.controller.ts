@@ -15,17 +15,17 @@ export class SongController {
   constructor(private readonly songService: SongService) {}
   // find one by id findOne(id)
   @Get(':id')
-  findOne(@Param('id') id: number): Promise<{}> {
+  findOne(@Param('id') id: number) {
     return this.songService.findOne(id);
   }
 
   @Get()
-  findAll(): Promise<{}> {
+  findAll() {
     return this.songService.findAll();
   }
 
   @Post()
-  create(@Body() createSongDto): Promise<{}> {
+  create(@Body() createSongDto) {
     return this.songService.create(createSongDto);
   }
 
@@ -35,7 +35,7 @@ export class SongController {
   }
 
   @Delete(':id')
-  delete(@Param('id') id: number): Promise<{}> {
+  delete(@Param('id') id: number) {
     return this.songService.delete(id);
   }
 }
